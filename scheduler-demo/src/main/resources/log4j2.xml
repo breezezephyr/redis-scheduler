@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <properties>
+    <property name="PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss,SSS}{GMT+8}}{faint} %clr{[%-5level]}{magenta} %clr{RID=%X{requestId}}{cyan} -- [%thread] %clr{%C}{BG_Green}.%clr{[%M]}{yellow} [%L]: %msg%n</property>
+    <property name="fileDir">/data/log/zero-backend</property>
+    <property name="zipFileDir">/data/log/zero-backend/history</property>
+  </properties>
+
+  <appenders>
+    <Console name="Console" target="system_out">
+      <PatternLayout pattern="${PATTERN}"/>
+    </Console>
+
+  </appenders>
+
+  <loggers>
+    <asyncRoot level="INFO" includeLocation="true">
+      <appenderref ref="Console"/>
+    </asyncRoot>
+  </loggers>
+</configuration>
